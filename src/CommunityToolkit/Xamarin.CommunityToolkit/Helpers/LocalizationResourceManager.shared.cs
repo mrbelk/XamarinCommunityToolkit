@@ -34,7 +34,7 @@ namespace Xamarin.CommunityToolkit.Helpers
 			if (resourceManager == null)
 				throw new InvalidOperationException($"Must call {nameof(LocalizationResourceManager)}.{nameof(Init)} first");
 
-			return resourceManager.GetString(text, CurrentCulture) ?? throw new NullReferenceException($"{nameof(text)}: {text} not found");
+			return resourceManager.GetString(text, CurrentCulture) ?? $"***{text}***";
 		}
 
 		public string this[string text] => GetValue(text);
